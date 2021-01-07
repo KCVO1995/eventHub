@@ -6,7 +6,7 @@ class EventHub {
   }
   off(eventName: string, cb: (data?: unknown) => void) {
     const index = (this.cache[eventName] || []).indexOf(cb)
-    if (index > 0) this.cache[eventName].splice(index, 1)
+    if (index >= 0) this.cache[eventName].splice(index, 1)
   }
   emit(eventName: string, message?: unknown) {
     (this.cache[eventName] || []).forEach(fn => fn(message))
@@ -14,3 +14,4 @@ class EventHub {
 }
 
 export default EventHub
+

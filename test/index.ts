@@ -1,4 +1,4 @@
-import EventHub from "../src/index.";
+import EventHub from "../src/index";
 
 type TestCase = (message: string) => void;
 
